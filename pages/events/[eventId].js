@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { getEventById, getAllEvents } from '../../helpers/api-utils';
 
 import EventSummary from '../../components/event-detail/event-summary';
@@ -13,6 +14,14 @@ function EventDetailPage(props) {
 
   return (
     <>
+      <Head>
+        <title>All events</title>
+        <meta
+          name="description"
+          content="Find a lot of great events that allow you evlove"
+        />
+      </Head>
+
       <EventSummary title={event.title} />
 
       <EventLogistics

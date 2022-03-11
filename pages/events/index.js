@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import { getAllEvents } from '../../helpers/api-utils';
 import EventList from '../../components/events/event-list';
@@ -16,6 +17,13 @@ function AllEventsPage(props) {
 
   return (
     <>
+      <Head>
+        <title>All events</title>
+        <meta
+          name="description"
+          content="Find a lot of great events that allow you evlove"
+        />
+      </Head>
       <EventSearch onSearch={findEventsHandler} />
       <EventList items={events} />
     </>
